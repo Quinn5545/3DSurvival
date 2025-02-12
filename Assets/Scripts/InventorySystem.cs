@@ -54,12 +54,15 @@ public class InventorySystem : MonoBehaviour
         {
             Debug.Log("e is pressed");
             inventoryScreenUI.SetActive(true);
+            CraftingSystem.Instance.craftingScreenUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             isOpen = true;
         }
         else if (Input.GetKeyDown(KeyCode.E) && isOpen)
         {
             inventoryScreenUI.SetActive(false);
+            CraftingSystem.Instance.craftingScreenUI.SetActive(false);
+            CraftingSystem.Instance.toolsScreenUI.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             isOpen = false;
         }
