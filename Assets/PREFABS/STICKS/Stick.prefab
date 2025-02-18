@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3451523174951903926}
   m_Layer: 0
   m_Name: Stick
-  m_TagString: Untagged
+  m_TagString: pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8604879346743091778}
-  m_Mesh: {fileID: -626550272588872419, guid: e22ffa38d50944f4db2e894c177c419d, type: 3}
+  m_Mesh: {fileID: -5195935364604857740, guid: 96185f8aa01e19d46922d59530259425, type: 3}
 --- !u!23 &2028079166913677694
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.61, y: 4, z: 6}
+  m_Size: {x: 1, y: 4, z: 6.5}
   m_Center: {x: 0.00084137917, y: 0.19908255, z: 0.0016933605}
 --- !u!114 &3279098968374302356
 MonoBehaviour:
@@ -143,5 +143,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.67, y: 29.1, z: 56.99}
+  m_Size: {x: 2, y: 29.1, z: 67}
   m_Center: {x: 0.00084137917, y: 0.19908255, z: 0.0016933605}

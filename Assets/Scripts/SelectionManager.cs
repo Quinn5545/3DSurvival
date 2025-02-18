@@ -13,6 +13,8 @@ public class SelectionManager : MonoBehaviour
     public GameObject interaction_Info_UI;
     public GameObject selectedObject;
     TMP_Text interaction_text;
+    public Image centerDotIcon;
+    public Image handIcon;
 
     private void Start()
     {
@@ -50,17 +52,33 @@ public class SelectionManager : MonoBehaviour
                 selectedObject = interactableObj.gameObject;
                 interaction_text.text = interactableObj.GetItemName();
                 interaction_Info_UI.SetActive(true);
+
+                //set hand icon
+                if (interactableObj.CompareTag("pickable"))
+                {
+                    centerDotIcon.gameObject.SetActive(false);
+                    handIcon.gameObject.SetActive(true);
+                }
+                else
+                {
+                    centerDotIcon.gameObject.SetActive(true);
+                    handIcon.gameObject.SetActive(false);
+                }
             }
             else
             {
                 onTarget = false;
                 interaction_Info_UI.SetActive(false);
+                centerDotIcon.gameObject.SetActive(true);
+                handIcon.gameObject.SetActive(false);
             }
         }
         else
         {
             onTarget = false;
             interaction_Info_UI.SetActive(false);
+            centerDotIcon.gameObject.SetActive(true);
+            handIcon.gameObject.SetActive(false);
         }
     }
 }

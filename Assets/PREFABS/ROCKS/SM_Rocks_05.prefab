@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8143886292166612236}
   m_Layer: 0
   m_Name: SM_Rocks_05
-  m_TagString: Untagged
+  m_TagString: pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
