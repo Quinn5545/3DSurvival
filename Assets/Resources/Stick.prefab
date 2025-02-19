@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4320383707429992871}
   - component: {fileID: 7470295298354113707}
   - component: {fileID: 755500997838611982}
+  - component: {fileID: 1252648358406508469}
   m_Layer: 5
   m_Name: Stick
   m_TagString: Untagged
@@ -102,3 +103,23 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1252648358406508469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338682478338563550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e4ed58445aa4a019bb8ae635360f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTrashable: 1
+  thisName: Stick
+  thisDescription: A stick
+  thisFunctionality: Can be used for crafting
+  isConsumable: 1
+  healthEffect: 10
+  caloriesEffect: 100
+  hydrationEffect: 1

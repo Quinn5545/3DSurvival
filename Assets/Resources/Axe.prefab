@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4058855178655454372}
   - component: {fileID: 8981214180768997700}
   - component: {fileID: 2810795672096450037}
+  - component: {fileID: -4549240372103946632}
   m_Layer: 5
   m_Name: Axe
   m_TagString: Untagged
@@ -102,3 +103,23 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &-4549240372103946632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6331095863159469172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e4ed58445aa4a019bb8ae635360f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTrashable: 1
+  thisName: Axe
+  thisDescription: A sharp tool
+  thisFunctionality: Cuts wood
+  isConsumable: 0
+  healthEffect: 0
+  caloriesEffect: 0
+  hydrationEffect: 0

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class InventorySystem : MonoBehaviour
 {
     public static InventorySystem Instance { get; set; }
+    public GameObject ItemInfoUI;
     public GameObject inventoryScreenUI;
 
     public List<GameObject> slotList = new List<GameObject>();
@@ -101,7 +102,7 @@ public class InventorySystem : MonoBehaviour
 
         pickupName.text = itemName;
         pickupImage.sprite = itemSprite;
-        Invoke("HidePickupAlert", 2f); // Calls HidePickupAlert after 1 second
+        Invoke("HidePickupAlert", 2f);
     }
 
     void HidePickupAlert()
