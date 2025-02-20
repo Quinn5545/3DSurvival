@@ -60,5 +60,5 @@
   "[csharp]": {
     "editor.defaultFormatter": "csharpier.csharpier-vscode"
   },
-  "cSpell.words": ["gameobject", "Trashable"]
+  "cSpell.words": ["Equippable", "gameobject", "Trashable"]
 }

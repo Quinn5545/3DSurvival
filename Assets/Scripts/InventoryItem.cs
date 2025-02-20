@@ -34,6 +34,12 @@ public class InventoryItem
     public float caloriesEffect;
     public float hydrationEffect;
 
+    // --- Equipping --- //
+    public bool isEquippable;
+    private GameObject itemPendingEquipping;
+    public bool isNowEquipped;
+    public bool isSelected;
+
     private void Start()
     {
         itemInfoUI = InventorySystem.Instance.ItemInfoUI;
@@ -44,6 +50,18 @@ public class InventoryItem
         itemInfoUI_itemFunctionality = itemInfoUI
             .transform.Find("itemFunctionality")
             .GetComponent<TextMeshProUGUI>();
+    }
+
+    void Update()
+    {
+        if (isSelected)
+        {
+            gameObject.GetComponent<DragDrop>().enabled = false;
+        }
+        else
+        {
+            gameObject.GetComponent<DragDrop>().enabled = true;
+        }
     }
 
     // Triggered when the mouse enters into the area of the item that has this script.
@@ -72,6 +90,16 @@ public class InventoryItem
                 // Setting this specific gameobject to be the item we want to destroy later
                 itemPendingConsumption = gameObject;
                 ConsumingFunction(healthEffect, caloriesEffect, hydrationEffect);
+            }
+
+            if (
+                isEquippable
+                && isNowEquipped == false
+                && EquipSystem.Instance.CheckIfFull() == false
+            )
+            {
+                EquipSystem.Instance.AddToQuickSlots(gameObject);
+                isNowEquipped = true;
             }
         }
     }
