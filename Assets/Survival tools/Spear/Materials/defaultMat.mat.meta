@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 418146666e43f804098653332d1511ca
+timeCreated: 1494427293
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88536
+  packageName: Survival tools (hand painting)
+  packageVersion: 1.1.0
+  assetPath: Assets/Survival tools/Spear/Materials/defaultMat.mat
+  uploadId: 179283

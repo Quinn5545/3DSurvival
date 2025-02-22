@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3b3ca3d9fde1e09439a630f3f0b98c15
+timeCreated: 1494427293
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88536
+  packageName: Survival tools (hand painting)
+  packageVersion: 1.1.0
+  assetPath: Assets/Survival tools/Dagger/Materials/defaultMat.mat
+  uploadId: 179283

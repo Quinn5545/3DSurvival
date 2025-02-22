@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a4a144f8f9a14804dab65ffd4b8adbda
+timeCreated: 1494434695
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88536
+  packageName: Survival tools (hand painting)
+  packageVersion: 1.1.0
+  assetPath: Assets/Survival tools/Prefabs/Bow.prefab
+  uploadId: 179283

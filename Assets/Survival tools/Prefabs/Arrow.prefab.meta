@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b94bb02f178a29d40a7391dad10ef6a8
+timeCreated: 1494429290
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88536
+  packageName: Survival tools (hand painting)
+  packageVersion: 1.1.0
+  assetPath: Assets/Survival tools/Prefabs/Arrow.prefab
+  uploadId: 179283

@@ -19,6 +19,9 @@ public class EquipSystem : MonoBehaviour
 
     public int selectedNumber = -1;
     public GameObject selectedItem;
+    public GameObject toolHolder;
+
+    public GameObject selectedItemModel;
 
     private void Awake()
     {
@@ -115,47 +118,30 @@ public class EquipSystem : MonoBehaviour
         switch (keyNumber)
         {
             case 1:
-                Debug.Log("key pressed: " + keyNumber);
                 SelectQuickSlot(1);
                 break;
             case 2:
-                Debug.Log("key pressed: " + keyNumber);
-
                 SelectQuickSlot(2);
                 break;
             case 3:
-                Debug.Log("key pressed: " + keyNumber);
-
                 SelectQuickSlot(3);
                 break;
             case 4:
-                Debug.Log("key pressed: " + keyNumber);
-
                 SelectQuickSlot(4);
                 break;
             case 5:
-                Debug.Log("key pressed: " + keyNumber);
-
                 SelectQuickSlot(5);
                 break;
             case 6:
-                Debug.Log("key pressed: " + keyNumber);
-
                 SelectQuickSlot(6);
                 break;
             case 7:
-                Debug.Log("key pressed: " + keyNumber);
-
                 SelectQuickSlot(7);
                 break;
             case 8:
-                Debug.Log("key pressed: " + keyNumber);
-
                 SelectQuickSlot(8);
                 break;
             case 9:
-                Debug.Log("key pressed: " + keyNumber);
-
                 SelectQuickSlot(9);
                 break;
             default:
@@ -166,7 +152,6 @@ public class EquipSystem : MonoBehaviour
 
     private void SelectQuickSlot(int number)
     {
-        // Debug.Log($"Selected slot: {number}");
         selectedNumber = number;
 
         // Deselect previous item if it exists
@@ -174,6 +159,11 @@ public class EquipSystem : MonoBehaviour
         {
             selectedItem.GetComponent<InventoryItem>().isSelected = false;
             selectedItem = null;
+            if (selectedItemModel != null)
+            {
+                DestroyImmediate(selectedItemModel.gameObject);
+                selectedItemModel = null;
+            }
         }
 
         selectedItem = GetSelectedItem(number);
@@ -181,6 +171,7 @@ public class EquipSystem : MonoBehaviour
         // Only select if the slot isn't empty
         if (selectedItem != null)
         {
+            SetEquipModel(selectedItem);
             selectedItem.GetComponent<InventoryItem>().isSelected = true;
         }
 
@@ -202,6 +193,23 @@ public class EquipSystem : MonoBehaviour
                 textComponent.color = Color.white;
             }
         }
+    }
+
+    private void SetEquipModel(GameObject selectedItem)
+    {
+        if (selectedItemModel != null)
+        {
+            DestroyImmediate(selectedItemModel.gameObject);
+            selectedItemModel = null;
+        }
+
+        string selectedItemName = selectedItem.name.Replace("(Clone)", "");
+        selectedItemModel = Instantiate(
+            Resources.Load<GameObject>(selectedItemName + "_Model"),
+            new Vector3(0.9f, 0.6f, 1.4f),
+            Quaternion.Euler(0, -12.5f, -18f)
+        );
+        selectedItemModel.transform.SetParent(toolHolder.transform, false);
     }
 
     private GameObject GetSelectedItem(int slotNumber)

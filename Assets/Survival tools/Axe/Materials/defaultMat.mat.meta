@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 16896e09582d1d84591ad567db8c0b4c
+timeCreated: 1494427292
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88536
+  packageName: Survival tools (hand painting)
+  packageVersion: 1.1.0
+  assetPath: Assets/Survival tools/Axe/Materials/defaultMat.mat
+  uploadId: 179283

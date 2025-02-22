@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class CraftingSystem : MonoBehaviour
 {
+    public static CraftingSystem Instance { get; set; }
+
     public GameObject craftingScreenUI;
     public GameObject toolsScreenUI;
 
@@ -22,13 +24,11 @@ public class CraftingSystem : MonoBehaviour
     TextMeshProUGUI AxeReq1;
     TextMeshProUGUI AxeReq2;
 
-    bool isOpen;
+    public bool isOpen;
 
     //All Blueprints
 
     public ItemBlueprint AxeBlueprint = new("Axe", 2, "Stone", 3, "Stick", 2);
-
-    public static CraftingSystem Instance { get; set; }
 
     public void Awake()
     {

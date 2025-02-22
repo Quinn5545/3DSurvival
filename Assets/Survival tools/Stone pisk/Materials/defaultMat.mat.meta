@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 88b6d03a84a308341b283fa3c58650d6
+timeCreated: 1494427293
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88536
+  packageName: Survival tools (hand painting)
+  packageVersion: 1.1.0
+  assetPath: Assets/Survival tools/Stone pisk/Materials/defaultMat.mat
+  uploadId: 179283

@@ -15,6 +15,9 @@ public class SelectionManager : MonoBehaviour
     TMP_Text interaction_text;
     public Image centerDotIcon;
     public Image handIcon;
+    public bool handIsVisible;
+    public GameObject selectedTree;
+    public GameObject chopHolder;
 
     private void Start()
     {
@@ -46,6 +49,24 @@ public class SelectionManager : MonoBehaviour
             InteractableObject interactableObj =
                 selectionTransform.GetComponent<InteractableObject>();
 
+            ChoppableTree choppableTree = selectionTransform.GetComponent<ChoppableTree>();
+
+            if (choppableTree && choppableTree.playerInRange)
+            {
+                choppableTree.canBeChopped = true;
+                selectedTree = choppableTree.gameObject;
+                chopHolder.gameObject.SetActive(true);
+            }
+            else
+            {
+                if (selectedTree != null)
+                {
+                    selectedTree.gameObject.GetComponent<ChoppableTree>().canBeChopped = false;
+                    selectedTree = null;
+                    chopHolder.gameObject.SetActive(false);
+                }
+            }
+
             if (interactableObj && interactableObj.playerInRange)
             {
                 onTarget = true;
@@ -56,17 +77,20 @@ public class SelectionManager : MonoBehaviour
                 //set hand icon
                 if (interactableObj.CompareTag("pickable"))
                 {
+                    handIsVisible = true;
                     centerDotIcon.gameObject.SetActive(false);
                     handIcon.gameObject.SetActive(true);
                 }
                 else
                 {
+                    handIsVisible = false;
                     centerDotIcon.gameObject.SetActive(true);
                     handIcon.gameObject.SetActive(false);
                 }
             }
             else
             {
+                handIsVisible = false;
                 onTarget = false;
                 interaction_Info_UI.SetActive(false);
                 centerDotIcon.gameObject.SetActive(true);
@@ -75,6 +99,7 @@ public class SelectionManager : MonoBehaviour
         }
         else
         {
+            handIsVisible = false;
             onTarget = false;
             interaction_Info_UI.SetActive(false);
             centerDotIcon.gameObject.SetActive(true);
@@ -84,6 +109,7 @@ public class SelectionManager : MonoBehaviour
 
     public void DisableSelection()
     {
+        handIsVisible = false;
         handIcon.enabled = false;
         centerDotIcon.enabled = false;
         interaction_Info_UI.SetActive(false);
@@ -93,6 +119,7 @@ public class SelectionManager : MonoBehaviour
 
     public void EnableSelection()
     {
+        handIsVisible = true;
         handIcon.enabled = true;
         centerDotIcon.enabled = true;
         interaction_Info_UI.SetActive(true);

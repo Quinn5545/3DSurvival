@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0d3aa78ec0e04c54bb80ae2296c8f635
+timeCreated: 1494427292
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88536
+  packageName: Survival tools (hand painting)
+  packageVersion: 1.1.0
+  assetPath: Assets/Survival tools/Stone axe/Materials/defaultMat.mat
+  uploadId: 179283

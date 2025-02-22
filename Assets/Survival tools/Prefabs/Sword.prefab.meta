@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f1b3d2c50431c024e83daa780495524a
+timeCreated: 1494429253
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88536
+  packageName: Survival tools (hand painting)
+  packageVersion: 1.1.0
+  assetPath: Assets/Survival tools/Prefabs/Sword.prefab
+  uploadId: 179283

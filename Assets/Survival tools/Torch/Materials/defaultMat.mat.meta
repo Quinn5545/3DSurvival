@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ff4c35f62ebf14643a43e9eb4ef92262
+timeCreated: 1494427291
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 88536
+  packageName: Survival tools (hand painting)
+  packageVersion: 1.1.0
+  assetPath: Assets/Survival tools/Torch/Materials/defaultMat.mat
+  uploadId: 179283
