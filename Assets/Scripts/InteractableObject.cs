@@ -22,9 +22,11 @@ public class InteractableObject : MonoBehaviour
         )
         {
             // if the inventory is NOT full
-            if (!InventorySystem.Instance.CheckIfFull())
+            if (InventorySystem.Instance.CheckSlotsAvailable(0))
             {
-                Debug.Log("item added to inventory");
+                SoundManager.Instance.PlaySound(SoundManager.Instance.pickupItemSound);
+
+                // Debug.Log("item added to inventory");
                 InventorySystem.Instance.AddToInventory(ItemName);
                 Destroy(gameObject);
             }

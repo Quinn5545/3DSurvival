@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -21,8 +23,15 @@ public class EquippableItem : MonoBehaviour
             && SelectionManager.Instance.handIsVisible == false
         )
         {
+            StartCoroutine(SwingSoundDelay());
             animator.SetTrigger("hit");
         }
+    }
+
+    IEnumerator SwingSoundDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SoundManager.Instance.PlaySound(SoundManager.Instance.toolSwingSound);
     }
 
     public void GetHit()
@@ -31,6 +40,7 @@ public class EquippableItem : MonoBehaviour
 
         if (selectedTree != null)
         {
+            SoundManager.Instance.PlaySound(SoundManager.Instance.chopSound);
             selectedTree.GetComponent<ChoppableTree>().GetHit();
         }
     }

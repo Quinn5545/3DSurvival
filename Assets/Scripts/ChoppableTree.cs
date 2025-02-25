@@ -11,7 +11,7 @@ public class ChoppableTree : MonoBehaviour
     public float treeMaxHealth;
     public float treeHealth;
     public Animator animator;
-    public float caloriesSpentChoppingWood = 20;
+    public float caloriesSpentChoppingWood = 10;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -57,6 +57,7 @@ public class ChoppableTree : MonoBehaviour
 
         if (treeHealth <= 0)
         {
+            SoundManager.Instance.PlaySound(SoundManager.Instance.treeFallSound);
             TreeIsDead();
         }
     }

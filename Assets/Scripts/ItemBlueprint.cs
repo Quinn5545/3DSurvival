@@ -10,12 +10,23 @@ public class ItemBlueprint
     public int Req2Amount;
 
     public int numOfRequirements;
+    public int numOfItemsToProduce;
 
-    public ItemBlueprint(string name, int reqNum, string r1, int r1Amount, string r2, int r2Amount)
+    public ItemBlueprint(
+        string name,
+        int producedItems,
+        int reqNum,
+        string r1,
+        int r1Amount,
+        string r2,
+        int r2Amount
+    )
     {
         itemName = name;
 
         numOfRequirements = reqNum;
+
+        numOfItemsToProduce = producedItems;
 
         Req1 = r1;
         Req2 = r2;

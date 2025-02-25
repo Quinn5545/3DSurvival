@@ -79,6 +79,8 @@ public class InventorySystem : MonoBehaviour
             inventoryScreenUI.SetActive(false);
             CraftingSystem.Instance.craftingScreenUI.SetActive(false);
             CraftingSystem.Instance.toolsScreenUI.SetActive(false);
+            CraftingSystem.Instance.survivalScreenUI.SetActive(false);
+            CraftingSystem.Instance.refineScreenUI.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
@@ -134,23 +136,25 @@ public class InventorySystem : MonoBehaviour
         return new GameObject();
     }
 
-    public bool CheckIfFull()
+    public bool CheckSlotsAvailable(int emptyNeeded)
     {
-        int counter = 0;
+        int emptySlot = 0;
 
         foreach (GameObject slot in slotList)
         {
-            if (slot.transform.childCount > 0)
+            if (slot.transform.childCount == 0)
             {
-                counter += 1;
+                emptySlot += 1;
             }
         }
-        if (counter == 21)
+        if (emptySlot >= emptyNeeded)
         {
+            // Debug.Log(emptySlot);
             return true;
         }
         else
         {
+            // Debug.Log(emptySlot);
             return false;
         }
     }
