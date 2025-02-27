@@ -61,7 +61,11 @@ public class InventorySystem : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !isOpen)
+        if (
+            Input.GetKeyDown(KeyCode.E)
+            && !isOpen
+            && !ConstructionManager.Instance.inConstructionMode
+        )
         {
             // Debug.Log("e is pressed");
             inventoryScreenUI.SetActive(true);
@@ -74,13 +78,18 @@ public class InventorySystem : MonoBehaviour
 
             isOpen = true;
         }
-        else if (Input.GetKeyDown(KeyCode.E) && isOpen)
+        else if (
+            Input.GetKeyDown(KeyCode.E)
+            && isOpen
+            && !ConstructionManager.Instance.inConstructionMode
+        )
         {
             inventoryScreenUI.SetActive(false);
             CraftingSystem.Instance.craftingScreenUI.SetActive(false);
             CraftingSystem.Instance.toolsScreenUI.SetActive(false);
             CraftingSystem.Instance.survivalScreenUI.SetActive(false);
             CraftingSystem.Instance.refineScreenUI.SetActive(false);
+            CraftingSystem.Instance.constructionScreenUI.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 

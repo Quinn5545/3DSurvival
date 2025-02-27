@@ -21,6 +21,7 @@ public class EquippableItem : MonoBehaviour
             && InventorySystem.Instance.isOpen == false
             && CraftingSystem.Instance.isOpen == false
             && SelectionManager.Instance.handIsVisible == false
+            && !ConstructionManager.Instance.inConstructionMode
         )
         {
             StartCoroutine(SwingSoundDelay());

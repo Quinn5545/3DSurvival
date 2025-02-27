@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -39,6 +40,7 @@ public class InventoryItem
     private GameObject itemPendingEquipping;
     public bool isNowEquipped;
     public bool isSelected;
+    public bool isUseable;
 
     private void Start()
     {
@@ -101,6 +103,52 @@ public class InventoryItem
                 EquipSystem.Instance.AddToQuickSlots(gameObject);
                 isNowEquipped = true;
             }
+            if (isUseable)
+            {
+                ConstructionManager.Instance.itemToBeDestroyed = gameObject;
+                gameObject.SetActive(false);
+                UseItem();
+            }
+        }
+    }
+
+    private void UseItem()
+    {
+        itemInfoUI.SetActive(false);
+
+        InventorySystem.Instance.isOpen = false;
+        InventorySystem.Instance.inventoryScreenUI.SetActive(false);
+
+        CraftingSystem.Instance.isOpen = false;
+        CraftingSystem.Instance.craftingScreenUI.SetActive(false);
+        CraftingSystem.Instance.survivalScreenUI.SetActive(false);
+        CraftingSystem.Instance.toolsScreenUI.SetActive(false);
+        CraftingSystem.Instance.refineScreenUI.SetActive(false);
+        CraftingSystem.Instance.constructionScreenUI.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        SelectionManager.Instance.EnableSelection();
+        SelectionManager.Instance.enabled = true;
+
+        switch (gameObject.name)
+        {
+            case "Foundation(Clone)":
+                ConstructionManager.Instance.ActivateConstructionPlacement("FoundationModel");
+                break;
+            case "Foundation":
+                ConstructionManager.Instance.ActivateConstructionPlacement("FoundationModel"); // just for testing purposes
+                break;
+            case "Wall(Clone)":
+                ConstructionManager.Instance.ActivateConstructionPlacement("WallModel");
+                break;
+            case "Wall":
+                ConstructionManager.Instance.ActivateConstructionPlacement("WallModel"); // just for testing purposes
+                break;
+            default:
+                // do nothing
+                break;
         }
     }
 
