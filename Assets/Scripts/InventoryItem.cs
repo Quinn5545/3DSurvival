@@ -13,6 +13,8 @@ public class InventoryItem
         IPointerDownHandler,
         IPointerUpHandler
 {
+    public static InventoryItem Instance { get; set; }
+
     // --- Is this item trashable --- //
     public bool isTrashable;
 
@@ -95,24 +97,25 @@ public class InventoryItem
             }
 
             if (
-                isEquippable
+                (isEquippable || isUseable)
                 && isNowEquipped == false
                 && EquipSystem.Instance.CheckIfFull() == false
             )
             {
+                // Debug.Log("this is working and getting here");
                 EquipSystem.Instance.AddToQuickSlots(gameObject);
                 isNowEquipped = true;
             }
-            if (isUseable)
-            {
-                ConstructionManager.Instance.itemToBeDestroyed = gameObject;
-                gameObject.SetActive(false);
-                UseItem();
-            }
+            // if (isUseable)
+            // {
+            //     ConstructionManager.Instance.itemToBeDestroyed = gameObject;
+            //     gameObject.SetActive(false);
+            //     UseItem();
+            // }
         }
     }
 
-    private void UseItem()
+    public void UseItem()
     {
         itemInfoUI.SetActive(false);
 
@@ -132,24 +135,24 @@ public class InventoryItem
         SelectionManager.Instance.EnableSelection();
         SelectionManager.Instance.enabled = true;
 
-        switch (gameObject.name)
-        {
-            case "Foundation(Clone)":
-                ConstructionManager.Instance.ActivateConstructionPlacement("FoundationModel");
-                break;
-            case "Foundation":
-                ConstructionManager.Instance.ActivateConstructionPlacement("FoundationModel"); // just for testing purposes
-                break;
-            case "Wall(Clone)":
-                ConstructionManager.Instance.ActivateConstructionPlacement("WallModel");
-                break;
-            case "Wall":
-                ConstructionManager.Instance.ActivateConstructionPlacement("WallModel"); // just for testing purposes
-                break;
-            default:
-                // do nothing
-                break;
-        }
+        // switch (gameObject.name)
+        // {
+        //     case "Foundation(Clone)":
+        //         ConstructionManager.Instance.ActivateConstructionPlacement("FoundationModel");
+        //         break;
+        //     case "Foundation":
+        //         ConstructionManager.Instance.ActivateConstructionPlacement("FoundationModel"); // just for testing purposes
+        //         break;
+        //     case "Wall(Clone)":
+        //         ConstructionManager.Instance.ActivateConstructionPlacement("WallModel");
+        //         break;
+        //     case "Wall":
+        //         ConstructionManager.Instance.ActivateConstructionPlacement("WallModel"); // just for testing purposes
+        //         break;
+        //     default:
+        //         // do nothing
+        //         break;
+        // }
     }
 
     // Triggered when the mouse button is released over the item that has this script.

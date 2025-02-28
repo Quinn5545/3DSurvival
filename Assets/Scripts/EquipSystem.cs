@@ -204,11 +204,23 @@ public class EquipSystem : MonoBehaviour
         }
 
         string selectedItemName = selectedItem.name.Replace("(Clone)", "");
-        selectedItemModel = Instantiate(
-            Resources.Load<GameObject>(selectedItemName + "_Model"),
-            new Vector3(0.9f, 0.6f, 1.4f),
-            Quaternion.Euler(0, -12.5f, -18f)
-        );
+        Debug.Log(selectedItem.CompareTag("ConstructionItem"));
+        if (selectedItem.CompareTag("ConstructionItem"))
+        {
+            selectedItemModel = Instantiate(
+                Resources.Load<GameObject>("Hammer_Model"),
+                new Vector3(0.7f, 0.8f, 1.1f),
+                Quaternion.Euler(4.2f, 187.3f, 93.8f)
+            );
+        }
+        else
+        {
+            selectedItemModel = Instantiate(
+                Resources.Load<GameObject>(selectedItemName + "_Model"),
+                new Vector3(0.9f, 0.6f, 1.4f),
+                Quaternion.Euler(0, -12.5f, -18f)
+            );
+        }
         selectedItemModel.transform.SetParent(toolHolder.transform, false);
     }
 

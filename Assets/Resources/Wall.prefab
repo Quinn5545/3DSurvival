@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3103025467993988062}
   m_Layer: 5
   m_Name: Wall
-  m_TagString: pickable
+  m_TagString: ConstructionItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,4 +127,3 @@ MonoBehaviour:
   isNowEquipped: 0
   isSelected: 0
   isUseable: 1
-  itemPendingToBeUsed: {fileID: 0}

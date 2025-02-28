@@ -41,6 +41,8 @@ public class ConstructionManager : MonoBehaviour
         }
     }
 
+    void Start() { }
+
     public void ActivateConstructionPlacement(string itemToConstruct)
     {
         GameObject item = Instantiate(Resources.Load<GameObject>(itemToConstruct));
@@ -145,6 +147,11 @@ public class ConstructionManager : MonoBehaviour
 
     private void Update()
     {
+        ConstructMethod();
+    }
+
+    public void ConstructMethod()
+    {
         if (inConstructionMode)
         {
             constructionUI.SetActive(true);
@@ -211,19 +218,30 @@ public class ConstructionManager : MonoBehaviour
                 && itemToBeConstructed.name == "FoundationModel"
             ) // We don't want the freestyle to be triggered when we select a ghost.
             {
+                EquippableItem.Instance.animator.SetTrigger("swing");
+                itemToBeDestroyed = EquipSystem.Instance.selectedItem;
                 PlaceItemFreeStyle();
-                DestroyItem(itemToBeDestroyed);
+                SoundManager.Instance.PlaySound(SoundManager.Instance.craftingSound);
+
+                StartCoroutine(DestroyHammerDelay());
             }
 
             if (selectingAGhost)
             {
+                EquippableItem.Instance.animator.SetTrigger("swing");
+                itemToBeDestroyed = EquipSystem.Instance.selectedItem;
                 PlaceItemInGhostPosition(selectedGhost);
-                DestroyItem(itemToBeDestroyed);
+                SoundManager.Instance.PlaySound(SoundManager.Instance.craftingSound);
+
+                StartCoroutine(DestroyHammerDelay());
             }
         }
-        // Right Mouse Click to Cancel                      //TODO - don't destroy the ui item until you actually placed it.
-        if (Input.GetKeyDown(KeyCode.X) && inConstructionMode)
+        // X to Cancel
+        if (Input.GetKeyDown(KeyCode.X) && inConstructionMode) //TODO - don't destroy the ui item until you actually placed it.
         { // Left Mouse Button
+            itemToBeDestroyed = EquipSystem.Instance.selectedItem;
+            // Debug.Log(itemToBeDestroyed);
+            // Debug.Log("x has been pressed inside the if");
             itemToBeDestroyed.SetActive(true);
             itemToBeDestroyed = null;
             DestroyItem(itemToBeConstructed);
@@ -316,5 +334,12 @@ public class ConstructionManager : MonoBehaviour
         DestroyImmediate(item);
         InventorySystem.Instance.ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
+    }
+
+    IEnumerator DestroyHammerDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        DestroyItem(EquipSystem.Instance.toolHolder.transform.GetChild(0).gameObject);
+        DestroyItem(itemToBeDestroyed);
     }
 }
