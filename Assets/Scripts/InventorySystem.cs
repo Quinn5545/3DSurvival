@@ -25,6 +25,7 @@ public class InventorySystem : MonoBehaviour
     public GameObject pickupAlert;
     public TextMeshProUGUI pickupName;
     public Image pickupImage;
+    public List<string> itemsPickedUp;
 
     private void Awake()
     {

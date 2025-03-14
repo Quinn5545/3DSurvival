@@ -28,6 +28,7 @@ public class InteractableObject : MonoBehaviour
 
                 // Debug.Log("item added to inventory");
                 InventorySystem.Instance.AddToInventory(ItemName);
+                InventorySystem.Instance.itemsPickedUp.Add(gameObject.name);
                 Destroy(gameObject);
             }
             else
