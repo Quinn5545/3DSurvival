@@ -70,6 +70,9 @@ public class InventorySystem : MonoBehaviour
         {
             // Debug.Log("e is pressed");
             inventoryScreenUI.SetActive(true);
+
+            inventoryScreenUI.GetComponentInParent<Canvas>().sortingOrder =
+                MenuManager.Instance.SetAsFront();
             CraftingSystem.Instance.craftingScreenUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -118,6 +121,8 @@ public class InventorySystem : MonoBehaviour
 
         ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
+
+        QuestManager.Instance.RefreshTrackerList();
     }
 
     void TriggerPickupPopup(string itemName, Sprite itemSprite)
@@ -190,6 +195,8 @@ public class InventorySystem : MonoBehaviour
         }
         ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
+
+        QuestManager.Instance.RefreshTrackerList();
     }
 
     public void ReCalculateList()
@@ -207,5 +214,19 @@ public class InventorySystem : MonoBehaviour
                 itemList.Add(result);
             }
         }
+    }
+
+    public int CheckItemAmount(string name)
+    {
+        int itemCounter = 0;
+
+        foreach (string item in itemList)
+        {
+            if (item == name)
+            {
+                itemCounter++;
+            }
+        }
+        return itemCounter;
     }
 }

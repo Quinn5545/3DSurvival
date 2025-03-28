@@ -220,12 +220,12 @@ public class CraftingSystem : MonoBehaviour
         }
 
         //refresh list
-        StartCoroutine(calculate());
+        StartCoroutine(Calculate());
 
         // RefreshNeededItems();
     }
 
-    public IEnumerator calculate()
+    public IEnumerator Calculate()
     {
         yield return 0;
         InventorySystem.Instance.ReCalculateList();
@@ -312,6 +312,7 @@ public class CraftingSystem : MonoBehaviour
         {
             craftWallButton.gameObject.SetActive(false);
         }
+        QuestManager.Instance.RefreshTrackerList();
     }
 
     void OpenToolsCategory()

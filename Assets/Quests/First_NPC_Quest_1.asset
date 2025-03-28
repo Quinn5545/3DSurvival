@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc50da26ccd94e2a999017aaa38e53a, type: 3}
+  m_Name: First_NPC_Quest_1
+  m_EditorClassIdentifier: 
+  initialDialog:
+  - 'Hey,
+
+    I didn''t expect to meet anyone out here.
+
+    I''m Melina, I live
+    in the nearby village.'
+  - 'I''m supposed to help my father get rabbit hides,
+
+    He is a famous leather-worker
+    in our village.'
+  - 'He will never say this, but I know he wanted to have a son.
+
+    One that could
+    help him with the family business and take it over some day.
+
+    Sometimes I
+    just feel like a disappointment...'
+  - 'I came here to prove that I can help.
+
+
+    But, I can''t kill these darn rabbits!
+
+    They
+    are so fluffy and cute.'
+  - 'Wait, could you help me?
+
+
+    Don''t worry, I''ll pay you.'
+  acceptOption: Sure I'll help you.
+  acceptAnswer: 'That''s awesome!
+
+    If you can bring me 5 rabbit hides, it will
+    be more than enough.'
+  declineOption: I'm sorry, but I can't kill them.
+  declineAnswer: 'Oh well, it was worth a try.
+
+    If you change your mine, I''ll
+    be here.'
+  comebackAfterDecline: So, did you change your mind?
+  comebackInProgress: It is still not enough, make sure to check in the tall grass
+    as well.
+  comebackCompleted: Those poor things, as promised, here is your reward.
+  finalWords: I hope this will make my father proud.
+  coinReward: 25
+  rewardItem1: Stone
+  rewardItem2: Stone
+  firstRequirementItem: Stick
+  firstRequirementAmount: 3
+  secondRequirementItem: 
+  secondRequirementAmount: 0

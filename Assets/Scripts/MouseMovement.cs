@@ -19,6 +19,7 @@ public class MouseMovement : MonoBehaviour
             !InventorySystem.Instance.isOpen
             && !MenuManager.Instance.isMenuOpen
             && !DialogSystem.Instance.dialogUIActive
+            && !QuestManager.Instance.isQuestMenuOpen
         )
         {
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
