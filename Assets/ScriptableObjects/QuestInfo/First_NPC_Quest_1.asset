@@ -41,21 +41,33 @@ MonoBehaviour:
 
 
     Don''t worry, I''ll pay you.'
+  initialDialogClips:
+  - {fileID: 8300000, guid: 82634f3b553034433a4147599f8177df, type: 3}
+  - {fileID: 8300000, guid: ec8858c35657e47ee9e2824a086e8169, type: 3}
+  - {fileID: 8300000, guid: 52ead2384a3f046159e5967ef5970f5c, type: 3}
+  - {fileID: 8300000, guid: 28df8a4a2e88346898c7618fc3f0fb2b, type: 3}
+  - {fileID: 8300000, guid: 280b17809ec7541d4975fe16d6a25705, type: 3}
   acceptOption: Sure I'll help you.
   acceptAnswer: 'That''s awesome!
 
     If you can bring me 5 rabbit hides, it will
     be more than enough.'
+  acceptAnswerClip: {fileID: 8300000, guid: 0a6de5bf5524c4c2ba0199b5a2be2f4c, type: 3}
   declineOption: I'm sorry, but I can't kill them.
   declineAnswer: 'Oh well, it was worth a try.
 
     If you change your mine, I''ll
     be here.'
+  declineAnswerClip: {fileID: 8300000, guid: cc1c0727482544060b362863103bc2c3, type: 3}
   comebackAfterDecline: So, did you change your mind?
+  comebackAfterDeclineClip: {fileID: 8300000, guid: e516fdecca7ac4540b3ab1cff1e6feff, type: 3}
   comebackInProgress: It is still not enough, make sure to check in the tall grass
     as well.
+  comebackInProgressClip: {fileID: 8300000, guid: d8d25a0e9c93c49ca9b290e0fd36e2b0, type: 3}
   comebackCompleted: Those poor things, as promised, here is your reward.
+  comebackCompletedClip: {fileID: 8300000, guid: dc22d551f61144429867ecab7eacd631, type: 3}
   finalWords: I hope this will make my father proud.
+  finalWordsClip: {fileID: 8300000, guid: 5d085dfff119d4e5a8d5af8b5269d372, type: 3}
   coinReward: 25
   rewardItem1: Stone
   rewardItem2: Stone
@@ -63,3 +75,5 @@ MonoBehaviour:
   firstRequirementAmount: 3
   secondRequirementItem: 
   secondRequirementAmount: 0
+  hasCheckpoints: 0
+  checkpoints: []

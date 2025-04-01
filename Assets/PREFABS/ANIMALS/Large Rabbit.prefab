@@ -64,9 +64,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Large Rabbit
       objectReference: {fileID: 0}
+    - target: {fileID: 3737710601130811933, guid: 0412198b6755747f686f89cb895d94c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.33
+      objectReference: {fileID: 0}
     - target: {fileID: 4022719389916071558, guid: 0412198b6755747f686f89cb895d94c3, type: 3}
       propertyPath: ItemName
       value: Large Rabbit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592319253176164686, guid: 0412198b6755747f686f89cb895d94c3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8397332129199759530, guid: 0412198b6755747f686f89cb895d94c3, type: 3}
       propertyPath: moveSpeed

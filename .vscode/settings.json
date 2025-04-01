@@ -65,6 +65,7 @@
     "Equippable",
     "gameobject",
     "Scriptable",
-    "Trashable"
+    "Trashable",
+    "voiceovers"
   ]
 }
